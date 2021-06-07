@@ -1,0 +1,53 @@
+{
+  "name": "megalo-cli",
+  "version": "1.0.0",
+  "description": "基础脚手架",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/18355166248/megalo-cli.git"
+  },
+  "author": "Megalo <643546122@qq.com>",
+  "license": "ISC",
+  "bin": {
+    "megalo": "bin/megalo.js"
+  },
+  "bugs": {
+    "url": "https://github.com/18355166248/megalo-cli/issues"
+  },
+  "keywords": [
+    "cli",
+    "tool"
+  ],
+  "homepage": "https://github.com/18355166248/megalo-cli#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.26.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "commander": "^7.2.0",
+    "semver": "^7.3.5"
+  }
+}
