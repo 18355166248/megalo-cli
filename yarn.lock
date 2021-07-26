@@ -1406,6 +1406,11 @@ is-fullwidth-code-point@^3.0.0:
   resolved "http://registry.medcloud.cn/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz#f116f8064fe90b3f7844a38997c0b75051269f1d"
   integrity sha1-8Rb4Bk/pCz94RKOJl8C3UFEmnx0=
 
+is-git-url@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npm.taobao.org/is-git-url/download/is-git-url-1.0.0.tgz#53f684cd143285b52c3244b4e6f28253527af66b"
+  integrity sha1-U/aEzRQyhbUsMkS05vKCU1J69ms=
+
 is-glob@^4.0.0, is-glob@^4.0.1:
   version "4.0.1"
   resolved "http://registry.medcloud.cn/is-glob/-/is-glob-4.0.1.tgz#7567dbe9f2f5e2467bc77ab83c4a29482407a5dc"

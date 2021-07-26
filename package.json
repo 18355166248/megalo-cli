@@ -52,6 +52,7 @@
     "didyoumean": "^1.2.1",
     "download-git-repo": "^3.0.2",
     "inquirer": "^8.1.2",
+    "is-git-url": "^1.0.0",
     "semver": "^7.3.5",
     "validate-npm-package-name": "^3.0.0"
   },
