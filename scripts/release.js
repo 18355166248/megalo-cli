@@ -5,7 +5,7 @@ const inquirer = require('inquirer');
 const currentVerison = require('../package.json').version;
 
 const release = async () => {
-  console.log(`Current easy cli version is ${currentVerison}`);
+  console.log(`Current megalo cli version is ${currentVerison}`);
   const releaseActions = ['patch', 'minor', 'major'];
   const versions = {};
   // 生成预发布版本标示

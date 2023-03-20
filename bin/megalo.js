@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const program = require('commander'); // 命令行工具
 const chalk = require('chalk');
 const semver = require('semver');
@@ -12,13 +14,13 @@ function checkNodeVersion(wanted, cliName) {
   if (!semver.satisfies(process.version, wanted)) {
     console.log(
       chalk.red(
-        '你正在使用Node版本 ' +
+        '你正在使用 Node 版本 ' +
           process.version +
-          ', 但是这个' +
+          ', 但是' +
           cliName +
-          '脚手架要求的Node版本是' +
+          '脚手架要求的 Node 版本是' +
           wanted +
-          '\n请更新你的Node版本'
+          '\n请更新你的 Node 版本'
       )
     );
     process.exit(1);
@@ -29,7 +31,7 @@ checkNodeVersion(requiredNodeVersion, 'megalo-cli');
 
 // 修改帮助信息的首行提示
 program
-  .version(require('../package.json').version, '-v, --version')
+  .version(require('../package.json').version, '-v, --version,')
   .usage('<command> [options]');
 
 // 初始化项目模板
@@ -38,7 +40,7 @@ program
   .description('create a new project from a template')
   .action((templateName, projectName, cmd) => {
     // 输入参数校验
-    validateArgsLen(process.argv.length, 5);
+    validateArgsLen(process.argv.length, 4);
     require('../lib/template/easy-create')(
       lowerCase(templateName),
       projectName
@@ -59,8 +61,8 @@ program
 program
   .command('list')
   .description('list all available project template')
-  .action((cmd) => {
-    validateArgsLen(process.argv.length, 3);
+  .action((cmd, options) => {
+    validateArgsLen(process.argv.length, 4);
     require('../lib/template/list-template')();
   });
 
@@ -75,9 +77,12 @@ program
 
 // 处理非法命令
 program.arguments('<command>').action((cmd) => {
-  console.log(cmd);
+  console.log();
   program.outputHelp();
-  console.log(`  ` + chalk.red(`Unknown comman ${chalk.yellow(cmd)}.`));
+  console.log();
+  console.log(
+    chalk.red(`不理解的命令 | Unknown command =>> ${chalk.yellow(cmd)}`)
+  );
   console.log();
   suggestCommands(cmd);
 });
@@ -108,7 +113,12 @@ function suggestCommands(cmd) {
   const suggestion = didyoumean(cmd, avaliableCommands);
 
   if (suggestion) {
-    console.log(' ' + chalk.red(`Did you mean ${chalk.yellow(suggestion)}?`));
+    console.log(
+      chalk.red(
+        `可能你想输入的是 | Did you mean =>> ${chalk.green(suggestion)} ?`
+      )
+    );
+    console.log();
   }
 }
 
