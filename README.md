@@ -13,15 +13,21 @@ yarn add -g megalo-cli
 
 #### 版本
 
+```js
 megalo -v --version
+···
 
 #### 帮助
 
+```js
 megalo -h --help
+```
 
 #### 获取模板列表
 
+```js
 megalo list
+```
 
 ### 执行命令
 
@@ -48,3 +54,9 @@ megalo add <template-name> <git-repo-address>
 ```js
 megalo delete <template-name>
 ```
+
+## 内置模板
+
+|模板|描述|
+|--|--|
+|||

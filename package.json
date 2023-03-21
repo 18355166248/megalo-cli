@@ -4,7 +4,7 @@
   "description": "管理项目模板地址脚手架",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublishOnly": "np --no-cleanup --yolo --any-branch --no-yarn"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
     "eslint": "^7.26.0",
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
+    "np": "^7.6.4",
     "ora": "^5.4.1",
     "prettier": "^2.3.0",
     "standard-version": "^9.3.1"
