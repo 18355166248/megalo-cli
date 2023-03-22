@@ -1,6 +1,6 @@
 {
   "name": "megalo-cli",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "管理项目模板地址脚手架",
   "main": "index.js",
   "scripts": {
