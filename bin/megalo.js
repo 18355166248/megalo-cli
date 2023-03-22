@@ -40,7 +40,7 @@ program
   .description('create a new project from a template')
   .action((templateName, projectName, cmd) => {
     // 输入参数校验
-    validateArgsLen(process.argv.length, 4);
+    validateArgsLen(process.argv.length, 5);
     require('../lib/template/easy-create')(
       lowerCase(templateName),
       projectName
