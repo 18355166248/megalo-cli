@@ -44,7 +44,9 @@ program
     require('../lib/template/easy-create')(
       lowerCase(templateName),
       projectName
-    );
+    ).then(() => {
+      console.log('创建成功');
+    });
   });
 
 // 添加一个项目模板

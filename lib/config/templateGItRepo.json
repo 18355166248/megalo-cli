@@ -1,1 +1,27 @@
-{"cra-analyzer":{"github":"git@github.com:18355166248/cra5-analyzer.git","download":"github:18355166248/cra5-analyzer"},"base-template":{"github":"git@github.com:18355166248/base-template.git","download":"git:18355166248/base-template"},"plop-template":{"github":"git@github.com:18355166248/megalo-plop-template.git","download":"github:18355166248/megalo-plop-template"},"base-template-rollup":{"github":"git@github.com:18355166248/base-template-rollup.git","download":"github:18355166248/base-template-rollup"}}
+{
+  "cra-analyzer": {
+    "github": "git@github.com:18355166248/cra5-analyzer.git",
+    "download": "github:18355166248/cra5-analyzer",
+    "describe": "create-react-app@5版本的代码分析模板"
+  },
+  "base-template": {
+    "github": "git@github.com:18355166248/base-template.git",
+    "download": "github:18355166248/base-template",
+    "describe": "基础模板, 带husky, typescript"
+  },
+  "plop-template": {
+    "github": "git@github.com:18355166248/megalo-plop-template.git",
+    "download": "github:18355166248/megalo-plop-template",
+    "describe": "plop 一些基础模板列表"
+  },
+  "base-template-rollup": {
+    "github": "git@github.com:18355166248/base-template-rollup.git",
+    "download": "github:18355166248/base-template-rollup",
+    "describe": "基于 base-template, 额外增加了 rollup"
+  },
+  "cra-template-smegalo-5": {
+    "github": "git@github.com:18355166248/cra-template-smegalo-5.git",
+    "download": "github.com:18355166248/cra-template-smegalo-5",
+    "describe": "create-react-app@5 + craco配置的模板"
+  }
+}
