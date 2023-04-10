@@ -13,7 +13,7 @@ yarn add -g megalo-cli
 
 #### 版本
 
-```js
+````js
 megalo -v --version
 ···
 
@@ -21,7 +21,7 @@ megalo -v --version
 
 ```js
 megalo -h --help
-```
+````
 
 #### 获取模板列表
 
@@ -57,6 +57,14 @@ megalo delete <template-name>
 
 ## 内置模板
 
-|模板|描述|
-|--|--|
-|||
+| 模板 | 描述 |
+| ---- | ---- |
+|      |      |
+
+## 版本校验失败可能是 npm registry 问题
+
+可以设置成
+
+```js
+npm config set registry https://registry.npmmirror.com
+```

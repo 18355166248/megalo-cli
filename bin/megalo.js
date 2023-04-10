@@ -6,6 +6,8 @@ const semver = require('semver');
 const didyoumean = require('didyoumean');
 const requiredNodeVersion = require('../package.json').engines.node;
 const enhanceErrorMessages = require('../lib/utils/enhanceErrorMessages');
+const checkForUpdate = require('update-check');
+const packageJson = require('../package.json');
 
 didyoumean.threshold = 0.6;
 
@@ -44,9 +46,7 @@ program
     require('../lib/template/easy-create')(
       lowerCase(templateName),
       projectName
-    ).then(() => {
-      console.log('创建成功');
-    });
+    ).then(notifyUpdate);
   });
 
 // 添加一个项目模板
@@ -126,4 +126,30 @@ function suggestCommands(cmd) {
 
 function lowerCase(name) {
   return name.toLocaleLowerCase();
+}
+
+async function notifyUpdate() {
+  try {
+    const res = await checkForUpdate(packageJson).catch(() => null);
+    console.log();
+    if (res?.latest) {
+      const updateMessage =
+        '\n yarn global add megalo-cli' +
+        '\n pnpm add -g megalo-cli' +
+        '\n npm i -g megalo-cli';
+
+      console.log(
+        chalk.bgRed.white.bold(
+          'A new version of `megalo-cli` is available!'
+        ) +
+          '\n\n' +
+          'You can update by running: ' +
+          chalk.cyan(updateMessage) +
+          '\n'
+      );
+    }
+    process.exit();
+  } catch {
+    // ignore error
+  }
 }
